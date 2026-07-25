@@ -106,7 +106,8 @@
 <div id="gameModal"
     class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50">
 
-    <div class="bg-slate-900 w-11/12 max-w-5xl rounded-3xl border border-cyan-500 shadow-2xl p-8 relative">
+    <div
+    class="relative w-11/12 max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl border border-cyan-500 bg-slate-900 p-8 shadow-2xl">
 
         <!-- Tombol Tutup -->
         <button

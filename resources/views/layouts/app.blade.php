@@ -26,37 +26,6 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body class="bg-slate-950 text-white font-[Poppins]">
-        <!-- Modal -->
-        <div
-            id="alertModal"
-            class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/60 backdrop-blur-sm">
-
-            <div
-                class="w-[400px] rounded-2xl bg-gray-900 border border-gray-700 p-6 shadow-2xl">
-
-                <h2 class="text-xl font-bold text-white mb-3">
-                    ⚠️ Peringatan
-                </h2>
-
-                <p id="alertMessage" class="text-gray-300">
-                    Pesan
-                </p>
-
-                <div class="mt-6 flex justify-end">
-
-                    <button
-                        onclick="closeAlert()"
-                        class="rounded-lg bg-amber-500 px-5 py-2 text-white hover:bg-amber-600">
-
-                        OK
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
             <script>
 
             function sendWhatsApp() {
@@ -66,7 +35,7 @@
                 let pesan = document.getElementById("message").value;
 
                 if (nama === "" || email === "" || pesan === "") {
-                    showalert("Silakan isi semua data terlebih dahulu.");
+                    alert("Silakan isi semua data terlebih dahulu.");
                     return;
                 }
 
@@ -95,14 +64,27 @@
 
     <script>
         function openGameModal() {
-            document.getElementById('gameModal').classList.remove('hidden');
-            document.getElementById('gameModal').classList.add('flex');
-        }
 
-        function closeGameModal() {
-            document.getElementById('gameModal').classList.add('hidden');
-            document.getElementById('gameModal').classList.remove('flex');
-        }
+    const modal = document.getElementById('gameModal');
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    // Halaman belakang tidak bisa discroll
+    document.body.classList.add('overflow-hidden');
+
+    }
+    function closeGameModal() {
+
+    const modal = document.getElementById('gameModal');
+
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+
+    // Aktifkan scroll halaman lagi
+    document.body.classList.remove('overflow-hidden');
+
+}
     </script>
 
 </body>
